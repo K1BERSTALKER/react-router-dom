@@ -1,0 +1,84 @@
+header.header {
+    @include media-sm {
+        width: $w-full;
+        padding: 0;
+        margin: 0;
+        margin-top: $m-2xl;
+        @include flex(space-evenly, center,left)
+    }
+}
+
+.header {
+
+    @include shadow;
+    @include flex(space-between, none, center);
+    background-color: $black;
+
+    @include media-sm {
+        width: $w-full;
+        padding: 0;
+        margin: 0;
+        height: 10vh;
+    }    
+
+    &__menu {
+        @include media-sm {
+            width: 100%;
+        }
+    }
+
+    ul {
+        width: $w-4xl;
+        @include flex(none, center, none);
+        padding: 30px;
+        height: 100%;
+
+        @include media-sm {
+            padding: 0;
+            margin: 0;
+            @include media-sm{
+                @include flex(space-between, center,center)
+            }
+        }
+
+        
+
+        li {
+            margin-right: $s;
+            position: relative;
+
+            @include media-sm{
+                margin: 0;
+            }
+
+            a {
+                text-transform: capitalize;
+                font-size: 15px;
+                font-weight: 500;
+                @include zindex;
+            }
+
+            span {
+                color: $indigo;
+                @include absolute;
+                font-size: 50px;
+                top: -20px;
+                opacity: .3;
+
+                // @include media-sm{
+                //     font-size: 30px;
+                // }
+            }
+        }
+    }
+
+    &__icons {
+        width: $s;
+        background: $lightdark;
+        @include flex(center, none, none);
+
+        button {
+            font-size: 50px;
+        }
+    }
+}
